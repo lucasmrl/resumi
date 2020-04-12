@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: rgb(204, 204, 204);
+}
+
+.app {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.left {
+  background-color: #fff;
+  width: 25vw;
+  box-shadow: 0 0 0.5cm #7b7d7d;
+}
+
+.right {
+  width: 75vw;
+  min-height: 100vh;
+}
+
+.right .page {
+  background: white;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 0.5cm;
+  box-shadow: 0 0 0.5cm #7b7d7d;
+  width: 21cm;
+  height: 29.7cm;
+}
+
+.thumb-template {
+  width: 30%;
+}
+
+/*TODO Fix Print - If user tries to print, the whole page is printing*/
+@media print {
+  body,
+  .right .page {
+    margin: 0;
+    box-shadow: 0;
+  }
+}

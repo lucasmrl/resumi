@@ -7,12 +7,12 @@ import AdditionalSkillsP from "./AdditionalSkillsP";
 function Paper() {
   return (
     <div className="">
-      <page size="A4" className="page">
+      <div size="A4" className="page">
         <HeaderP />
         <ProfessionalP />
         <EducationP />
         <AdditionalSkillsP />
-      </page>
+      </div>
     </div>
   );
 }

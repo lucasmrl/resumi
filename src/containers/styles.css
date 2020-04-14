@@ -39,9 +39,18 @@ body {
 
 /*TODO Fix Print - If user tries to print, the whole page is printing*/
 @media print {
-  body,
-  .right .page {
+  @page {
     margin: 0;
-    box-shadow: 0;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .page * {
+    visibility: visible;
+  }
+  .page {
+    position: fixed;
+    left: 10px;
+    top: -50px;
   }
 }

@@ -19,20 +19,22 @@ body {
 .right {
   width: 75vw;
   min-height: 100vh;
+  font-family: "Lora", serif;
+}
+
+.right p {
+  margin: 0;
 }
 
 .right .page {
   background: white;
   display: block;
   margin: 0 auto;
+  margin-top: 50px;
   margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm #7b7d7d;
   width: 21cm;
   height: 29.7cm;
-}
-
-.thumb-template {
-  width: 30%;
 }
 
 /*TODO Fix Print - If user tries to print, the whole page is printing*/

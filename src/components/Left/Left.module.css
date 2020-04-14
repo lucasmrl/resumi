@@ -1,0 +1,19 @@
+.topLeft {
+  display: flex;
+  padding: 15px;
+  text-align: center;
+  justify-content: space-evenly;
+}
+
+hr {
+  width: 95%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.formsSection {
+  margin-left: 25px;
+  margin-top: 25px;
+}

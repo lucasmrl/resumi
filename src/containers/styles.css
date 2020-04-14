@@ -37,7 +37,6 @@ body {
   height: 29.7cm;
 }
 
-/*TODO Fix Print - If user tries to print, the whole page is printing*/
 @media print {
   @page {
     margin: 0;

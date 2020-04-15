@@ -26,3 +26,9 @@ h2 {
   display: flex;
   flex-direction: column;
 }
+
+img {
+  width: 25%;
+  margin-top: 15px;
+  margin-left: 20px;
+}

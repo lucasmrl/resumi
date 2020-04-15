@@ -6,10 +6,12 @@ import AdditionalSkills from "./AdditionalSkills";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
+import logo from "../../assets/logo.png";
 
 function Left() {
   return (
     <div className="left">
+      <img src={logo} alt="logo" />
       <div className="">
         <Router>
           <div className={classes.topLeft}>

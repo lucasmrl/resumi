@@ -13,7 +13,16 @@ hr {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
+h2 {
+  font-family: "Roboto", serif;
+  color: #3498db;
+}
+
 .formsSection {
-  margin-left: 25px;
-  margin-top: 25px;
+  margin: 25px;
+}
+
+.formStyle {
+  display: flex;
+  flex-direction: column;
 }

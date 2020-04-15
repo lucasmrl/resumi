@@ -1,27 +1,26 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./Template.module.css";
+import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function HeaderP() {
+  const { content } = useContext(ResumeContext);
+
   return (
     <div>
       <div className={classes.headerResume}>
         <div className={classes.contentHeader}>
-          <h1>Lucas Melo R. de Lima</h1>
+          <h1>{content.header.name}</h1>
           <p>
-            827 S Washington St, #113
+            {content.header.address}
             <br />
-            Salt Lake City, UT, 84111
+            {content.header.city} {content.header.state} {content.header.zip}
             <br />
-            (801) 111 1111
+            {content.header.phone}
             <br />
-            email@email.com
+            {content.header.email}
           </p>
           <br />
-          <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia,
-            ad velit magni quisquam at eius? Eius, nam architecto rerum expedita
-            eveniet aliquam delectus incidunt.
-          </p>
+          <p>{content.header.summary}</p>
           <hr className={classes.dividerRight} />
         </div>
       </div>

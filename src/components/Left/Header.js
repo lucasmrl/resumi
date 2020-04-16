@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Header() {
-  const { updateHeaderData } = useContext(ResumeContext);
+  const { content, updateHeaderData } = useContext(ResumeContext);
 
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
@@ -29,6 +29,7 @@ function Header() {
           label="Full Name"
           name="name"
           variant="outlined"
+          defaultValue={content.header.name}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -39,6 +40,7 @@ function Header() {
           label="Address"
           name="address"
           variant="outlined"
+          defaultValue={content.header.address}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -49,6 +51,7 @@ function Header() {
           label="City"
           name="city"
           variant="outlined"
+          defaultValue={content.header.city}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -59,6 +62,7 @@ function Header() {
           label="State"
           name="state"
           variant="outlined"
+          defaultValue={content.header.state}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -69,6 +73,7 @@ function Header() {
           label="Zip Code"
           name="zip"
           variant="outlined"
+          defaultValue={content.header.zip}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -79,6 +84,7 @@ function Header() {
           label="Phone"
           name="phone"
           variant="outlined"
+          defaultValue={content.header.phone}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -89,6 +95,7 @@ function Header() {
           label="E-mail"
           name="email"
           variant="outlined"
+          defaultValue={content.header.email}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
@@ -101,6 +108,7 @@ function Header() {
           multiline
           rows={7}
           variant="outlined"
+          defaultValue={content.header.summary}
           inputRef={register}
           onChange={handleSubmit(onSubmit)}
           style={{

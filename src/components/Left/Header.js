@@ -6,13 +6,13 @@ import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
 function Header() {
-  const { content, updateHeaderData } = useContext(ResumeContext);
+  const { content, rerender, updateHeaderData } = useContext(ResumeContext);
 
   const { register, handleSubmit, watch, errors } = useForm();
   const onSubmit = (data) => {
     updateHeaderData(data);
   };
-
+  console.log(rerender);
   // console.log(watch("name")); To test if the input is receiving the data
 
   return (

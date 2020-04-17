@@ -83,7 +83,7 @@ function AdditionalSkills() {
           variant="contained"
           color="secondary"
           type="submit"
-          style={{ margin: 8 }}
+          style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         >
           {btnText}
         </Button>

@@ -7,11 +7,30 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import logo from "../../assets/logo.png";
+import { ResumeContext } from "../../contexts/ResumeContext";
+import fakeData from "../../utils/fake_data";
 
 function Left() {
+  const { content, updateFakeData } = useContext(ResumeContext);
+
+  function handleFakeData(e) {
+    e.preventDefault();
+    updateFakeData(fakeData);
+  }
+
   return (
     <div className="left">
-      <img src={logo} alt="logo" />
+      <div className={classes.headerLeft}>
+        <img src={logo} alt="logo" />
+        <Button
+          color="secondary"
+          onClick={handleFakeData}
+          style={{ marginTop: 15, marginRight: 20, height: "auto" }}
+        >
+          example
+        </Button>
+      </div>
+
       <div className="">
         <Router>
           <div className={classes.topLeft}>

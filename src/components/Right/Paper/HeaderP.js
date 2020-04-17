@@ -4,12 +4,11 @@ import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function HeaderP() {
   const { content } = useContext(ResumeContext);
-
   return (
     <div>
       <div className={classes.headerResume}>
         <div className={classes.contentHeader}>
-          <h1>{content.header.name}</h1>
+          <h1 className={classes.h1Name}>{content.header.name}</h1>
           <p>
             {content.header.address}
             <br />

@@ -5,7 +5,7 @@ export const ResumeContext = createContext();
 const ResumeContextProvider = (props) => {
   const [content, setContent] = useState({
     header: {},
-    professional: {},
+    professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
     education: {},
     additional: [],
   });
@@ -26,6 +26,10 @@ const ResumeContextProvider = (props) => {
     setContent({ ...content, additional: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
   }
 
+  function updateFakeData(data) {
+    setContent({ ...content, ...data });
+  }
+
   return (
     <ResumeContext.Provider
       value={{
@@ -34,6 +38,7 @@ const ResumeContextProvider = (props) => {
         updateProfessionalData,
         updateEducationData,
         updateAdditionalData,
+        updateFakeData,
       }}
     >
       {/* This refers to the children that this provider/components wraps. */}

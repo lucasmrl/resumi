@@ -5,6 +5,12 @@
   justify-content: space-evenly;
 }
 
+.headerLeft {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
 hr {
   width: 95%;
   border: 0;
@@ -14,6 +20,11 @@ hr {
 }
 
 h2 {
+  font-family: "Roboto", serif;
+  color: #2e4053;
+}
+
+h4 {
   font-family: "Roboto", serif;
   color: #2e4053;
 }

@@ -5,21 +5,29 @@ import { ResumeContext } from "../../../contexts/ResumeContext";
 function AdditionalSkillsP() {
   const { content } = useContext(ResumeContext);
 
+  //If there is no data, the Title of the section will not be displayed
+  let title;
+  if (content.additional.length === 0) {
+    title = "";
+  } else {
+    title = (
+      <h3>
+        <strong>Additional Skills</strong>
+      </h3>
+    );
+  }
+
   let bulletsData = content.additional.map((el) => {
     if (el === "") {
       return "";
     } else {
-      return <li>{el}</li>;
+      return <li key={el}>{el}</li>;
     }
   });
-
-  console.log(content);
   return (
     <div className={classes.professionalResume}>
       <div className="">
-        <h3>
-          <strong>Additional Skilss</strong>
-        </h3>
+        {title}
         <ul>{bulletsData}</ul>
       </div>
     </div>

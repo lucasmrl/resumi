@@ -5,51 +5,125 @@ import Education from "./Education";
 import AdditionalSkills from "./AdditionalSkills";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import classes from "./Left.module.css";
+import myClasses from "./Left.module.css";
 import logo from "../../assets/logo.png";
 import { ResumeContext } from "../../contexts/ResumeContext";
-import fakeData from "../../utils/fake_data";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles({
+  rootAdd: {
+    background: "linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px #F2F3F4",
+    color: "white",
+    height: 30,
+    textAlign: "center",
+    fontSize: 10,
+    marginTop: 15,
+    marginRight: 20,
+    fontWeight: 700,
+  },
+  rootRemove: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    color: "white",
+    height: 30,
+    textAlign: "center",
+    fontSize: 10,
+    marginTop: 15,
+    marginRight: 20,
+    fontWeight: 700,
+  },
+
+  headerLink: {
+    color: "#900C3F ",
+  },
+});
 
 function Left() {
-  const { content, updateFakeData } = useContext(ResumeContext);
+  const { control, addFakeData, removeFakeData } = useContext(ResumeContext);
+  const classes = useStyles();
 
-  function handleFakeData(e) {
+  function useFakeData(e) {
     e.preventDefault();
-    updateFakeData(fakeData);
+    addFakeData();
+  }
+
+  function clearFakeData(e) {
+    e.preventDefault();
+    removeFakeData();
+  }
+
+  let expData;
+  if (control) {
+    expData = (
+      <Button
+        color="secondary"
+        onClick={clearFakeData}
+        className={classes.rootRemove}
+        // style={{ marginTop: 15, marginRight: 20, height: "auto" }}
+      >
+        remove example
+      </Button>
+    );
+  } else {
+    expData = (
+      <Button
+        color="primary"
+        onClick={useFakeData}
+        className={classes.rootAdd}
+        // style={{ marginTop: 15, marginRight: 20, height: "auto" }}
+      >
+        example
+      </Button>
+    );
   }
 
   return (
     <div className="left">
-      <div className={classes.headerLeft}>
+      <div className={myClasses.headerLeft}>
         <img src={logo} alt="logo" />
-        <Button
-          color="secondary"
-          onClick={handleFakeData}
-          style={{ marginTop: 15, marginRight: 20, height: "auto" }}
-        >
-          example
-        </Button>
+        {expData}
       </div>
 
       <div className="">
         <Router>
-          <div className={classes.topLeft}>
-            <Button color="primary" component={Link} to="/header">
+          <div className={myClasses.topLeft}>
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/header"
+            >
               Header
             </Button>
-            <Button color="primary" component={Link} to="/professional">
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/professional"
+            >
               Experience
             </Button>
-            <Button color="primary" component={Link} to="/education">
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/education"
+            >
               Education
             </Button>
-            <Button color="primary" component={Link} to="/additional">
+            <Button
+              className={classes.headerLink}
+              component={Link}
+              to="/additional"
+            >
               Skills
             </Button>
           </div>
           <div>
-            <hr className={classes.hr} />
-            <div className={classes.formsSection}>
+            <hr className={myClasses.hr} />
+            <div className={myClasses.formsSection}>
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>

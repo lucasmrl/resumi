@@ -3,11 +3,18 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function AdditionalSkillsP() {
-  const { content } = useContext(ResumeContext);
+  const { content, control, contentFake } = useContext(ResumeContext);
+
+  let contentUse;
+  if (control) {
+    contentUse = contentFake;
+  } else {
+    contentUse = content;
+  }
 
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (content.additional.length === 0) {
+  if (contentUse.additional.length === 0) {
     title = "";
   } else {
     title = (
@@ -17,7 +24,7 @@ function AdditionalSkillsP() {
     );
   }
 
-  let bulletsData = content.additional.map((el) => {
+  let bulletsData = contentUse.additional.map((el) => {
     if (el === "") {
       return "";
     } else {

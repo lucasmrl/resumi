@@ -3,11 +3,18 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function ProfessionalP() {
-  const { content } = useContext(ResumeContext);
+  const { content, control, contentFake } = useContext(ResumeContext);
+
+  let contentUse;
+  if (control) {
+    contentUse = contentFake;
+  } else {
+    contentUse = content;
+  }
 
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (Object.keys(content.professional).length < 3) {
+  if (Object.keys(contentUse.professional).length < 3) {
     title = "";
   } else {
     title = (
@@ -17,19 +24,19 @@ function ProfessionalP() {
     );
   }
 
-  let bulletProfessional1 = content.professional.desc1.map((el) => {
+  let bulletProfessional1 = contentUse.professional.desc1.map((el, index) => {
     if (el === "") {
       return "";
     } else {
-      return <li key={el}>{el}</li>;
+      return <li key={index}>{el}</li>;
     }
   });
 
-  let bulletProfessional2 = content.professional.desc2.map((el) => {
+  let bulletProfessional2 = contentUse.professional.desc2.map((el, index) => {
     if (el === "") {
       return "";
     } else {
-      return <li key={el}>{el}</li>;
+      return <li key={index}>{el}</li>;
     }
   });
 
@@ -38,21 +45,21 @@ function ProfessionalP() {
       <div className="">
         {title}
         <p>
-          <strong>{content.professional.company1}</strong>{" "}
-          {content.professional.local1}
+          <strong>{contentUse.professional.company1}</strong>{" "}
+          {contentUse.professional.local1}
         </p>
         <p>
-          {content.professional.position1} {content.professional.start1}{" "}
-          {content.professional.end1}
+          {contentUse.professional.position1} {contentUse.professional.start1}{" "}
+          {contentUse.professional.end1}
         </p>
         <ul>{bulletProfessional1}</ul>
         <p>
-          <strong>{content.professional.company2}</strong>{" "}
-          {content.professional.local2}
+          <strong>{contentUse.professional.company2}</strong>{" "}
+          {contentUse.professional.local2}
         </p>
         <p>
-          {content.professional.position2} {content.professional.start2}{" "}
-          {content.professional.end2}
+          {contentUse.professional.position2} {contentUse.professional.start2}{" "}
+          {contentUse.professional.end2}
         </p>
         <ul>{bulletProfessional2}</ul>
       </div>

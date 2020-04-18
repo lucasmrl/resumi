@@ -3,11 +3,18 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function EducationP() {
-  const { content } = useContext(ResumeContext);
+  const { content, control, contentFake } = useContext(ResumeContext);
+
+  let contentUse;
+  if (control) {
+    contentUse = contentFake;
+  } else {
+    contentUse = content;
+  }
 
   //If there is no data, the Title of the section will not be displayed
   let title;
-  if (Object.keys(content.education).length === 0) {
+  if (Object.keys(contentUse.education).length === 0) {
     title = "";
   } else {
     title = (
@@ -18,12 +25,12 @@ function EducationP() {
   }
 
   let bulletEducation;
-  if (!content.education.additional) {
+  if (!contentUse.education.additional) {
     bulletEducation = "";
   } else {
     bulletEducation = (
       <ul>
-        <li>{content.education.additional}</li>
+        <li>{contentUse.education.additional}</li>
       </ul>
     );
   }
@@ -33,11 +40,11 @@ function EducationP() {
       <div className="">
         {title}
         <p>
-          <strong>{content.education.institution} </strong>{" "}
-          {content.education.city}
+          <strong>{contentUse.education.institution} </strong>{" "}
+          {contentUse.education.city}
         </p>
         <p>
-          {content.education.major} {content.education.gradYear}
+          {contentUse.education.major} {contentUse.education.gradYear}
         </p>
         {bulletEducation}
       </div>

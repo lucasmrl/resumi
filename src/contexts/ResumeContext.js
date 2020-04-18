@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import fakeData from "../utils/fake_data";
 
 export const ResumeContext = createContext();
 
@@ -9,6 +10,10 @@ const ResumeContextProvider = (props) => {
     education: {},
     additional: [],
   });
+
+  const [contentFake, setContentFake] = useState();
+
+  const [control, setControl] = useState(false);
 
   function updateHeaderData(data) {
     setContent({ ...content, header: data });
@@ -26,19 +31,33 @@ const ResumeContextProvider = (props) => {
     setContent({ ...content, additional: Object.values(data) }); //Converting the object to an Array in order to iterate in AdditionalSkillsP.js
   }
 
-  function updateFakeData(data) {
-    setContent({ ...content, ...data });
+  function addFakeData() {
+    setControl(true);
+    setContentFake(fakeData);
+  }
+
+  function removeFakeData() {
+    setControl(false);
+    setContentFake({
+      header: {},
+      professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+      education: {},
+      additional: [],
+    });
   }
 
   return (
     <ResumeContext.Provider
       value={{
         content,
+        control,
+        contentFake,
         updateHeaderData,
         updateProfessionalData,
         updateEducationData,
         updateAdditionalData,
-        updateFakeData,
+        addFakeData,
+        removeFakeData,
       }}
     >
       {/* This refers to the children that this provider/components wraps. */}

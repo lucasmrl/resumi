@@ -1,19 +1,20 @@
 import React, { useContext } from "react";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";
+// import Button from "@material-ui/core/Button";
 import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
-function Header() {
-  const { content, rerender, updateHeaderData } = useContext(ResumeContext);
+function Header(props) {
+  const { content, updateHeaderData, removeFakeData } = useContext(
+    ResumeContext
+  );
 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
+    removeFakeData();
     updateHeaderData(data);
   };
-  console.log(rerender);
-  // console.log(watch("name")); To test if the input is receiving the data
 
   return (
     <div className="">

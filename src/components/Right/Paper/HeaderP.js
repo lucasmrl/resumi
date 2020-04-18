@@ -3,23 +3,32 @@ import classes from "./Template.module.css";
 import { ResumeContext } from "../../../contexts/ResumeContext";
 
 function HeaderP() {
-  const { content } = useContext(ResumeContext);
+  const { content, control, contentFake } = useContext(ResumeContext);
+
+  let contentUse;
+  if (control) {
+    contentUse = contentFake;
+  } else {
+    contentUse = content;
+  }
   return (
     <div>
       <div className={classes.headerResume}>
         <div className={classes.contentHeader}>
-          <h1 className={classes.h1Name}>{content.header.name}</h1>
+          <h1 className={classes.h1Name}>{contentUse.header.name}</h1>
           <p>
-            {content.header.address}
+            {contentUse.header.address}
             <br />
-            {content.header.city} {content.header.state} {content.header.zip}
+            {contentUse.header.city} {contentUse.header.state}
+            {"  "}
+            {contentUse.header.zip}
             <br />
-            {content.header.phone}
+            {contentUse.header.phone}
             <br />
-            {content.header.email}
+            {contentUse.header.email}
           </p>
           <br />
-          <p>{content.header.summary}</p>
+          <p>{contentUse.header.summary}</p>
           <hr className={classes.dividerRight} />
         </div>
       </div>

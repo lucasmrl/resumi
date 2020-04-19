@@ -7,7 +7,6 @@
 
 .headerLeft {
   display: flex;
-  text-align: center;
   justify-content: space-between;
 }
 
@@ -17,6 +16,19 @@ hr {
   height: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.templatesH2 {
+  margin-left: 15px;
+}
+
+.hr2 {
+  width: 90%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 20px;
 }
 
 h2 {
@@ -39,7 +51,20 @@ h4 {
 }
 
 img {
-  width: 25%;
+  width: 120px;
   margin-top: 15px;
   margin-left: 20px;
+}
+
+.img2 {
+  width: 120px;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.templateCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

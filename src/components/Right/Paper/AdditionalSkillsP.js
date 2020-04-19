@@ -24,11 +24,11 @@ function AdditionalSkillsP() {
     );
   }
 
-  let bulletsData = contentUse.additional.map((el) => {
+  let bulletsData = contentUse.additional.map((el, index) => {
     if (el === "") {
       return "";
     } else {
-      return <li key={el}>{el}</li>;
+      return <li key={index}>{el}</li>;
     }
   });
   return (

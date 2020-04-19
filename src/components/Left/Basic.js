@@ -6,7 +6,7 @@ import AdditionalSkills from "./AdditionalSkills";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import myClasses from "./Left.module.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/default.png";
 import { ResumeContext } from "../../contexts/ResumeContext";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -32,6 +32,7 @@ const useStyles = makeStyles({
     color: "white",
     height: 30,
     textAlign: "center",
+    minWidth: 130,
     fontSize: 10,
     marginTop: 15,
     marginRight: 20,
@@ -39,7 +40,7 @@ const useStyles = makeStyles({
   },
 
   headerLink: {
-    color: "#900C3F ",
+    color: "#0298B8 ",
   },
 });
 
@@ -85,8 +86,12 @@ function Left() {
   return (
     <div className="left">
       <div className={myClasses.headerLeft}>
-        <img src={logo} alt="logo" />
-        {expData}
+        <div styles={{ flexGrow: 2 }}>
+          <Link to="/" style={{ display: "inline" }}>
+            <img src={logo} alt="logo" />
+          </Link>
+        </div>
+        <div styles={{ flexGrow: 1 }}>{expData}</div>
       </div>
 
       <div className="">
@@ -95,28 +100,28 @@ function Left() {
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/header"
+              to="/basic/header"
             >
               Header
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/professional"
+              to="/basic/professional"
             >
               Experience
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/education"
+              to="/basic/education"
             >
               Education
             </Button>
             <Button
               className={classes.headerLink}
               component={Link}
-              to="/additional"
+              to="/basic/additional"
             >
               Skills
             </Button>
@@ -127,16 +132,16 @@ function Left() {
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>
-                <Route path="/header">
+                <Route path="/basic/header">
                   <Header />
                 </Route>
-                <Route path="/professional">
+                <Route path="/basic/professional">
                   <Professional />
                 </Route>
-                <Route path="/education">
+                <Route path="/basic/education">
                   <Education />
                 </Route>
-                <Route path="/additional">
+                <Route path="/basic/additional">
                   <AdditionalSkills />
                 </Route>
               </Switch>

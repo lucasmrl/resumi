@@ -14,7 +14,7 @@ function Templates() {
   const useStyles = makeStyles({
     headerLink: {
       color: "#FF8E53 ",
-      width: 100,
+      minWidth: 100,
       marginLeft: 30,
     },
   });
@@ -30,15 +30,25 @@ function Templates() {
       </div>
       <hr className={myClasses.hr2} />
       <h2 className={myClasses.templatesH2}>Templates</h2>
-      <div>
+      <div className={myClasses.cards}>
         <div className={myClasses.templateCard}>
-          <img src={thumbn} alt="thumbnail" />
+          <img src={thumbn} alt="thumbnail" className={myClasses.imgThumb} />
           <Button
             className={classes.headerLink}
             component={Link}
             to="/basic/header"
           >
             The Basic
+          </Button>
+        </div>
+        <div className={myClasses.templateCard}>
+          <img src={thumbn} alt="thumbnail" className={myClasses.imgThumb} />
+          <Button
+            className={classes.headerLink}
+            component={Link}
+            to="/basic/header"
+          >
+            The Stylish
           </Button>
         </div>
       </div>

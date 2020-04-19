@@ -63,8 +63,21 @@ img {
   margin-bottom: 15px;
 }
 
+.imgThumb {
+  width: 170px;
+  margin-left: 20px;
+}
+
 .templateCard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  width: 80%;
+  margin: 25px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }

@@ -11,6 +11,14 @@ function HeaderP() {
   } else {
     contentUse = content;
   }
+
+  let divider;
+  if (Object.keys(contentUse.header).length > 0) {
+    divider = <hr className={classes.dividerRight} />;
+  } else {
+    divider = "";
+  }
+
   return (
     <div>
       <div className={classes.headerResume}>
@@ -29,7 +37,7 @@ function HeaderP() {
           </p>
           <br />
           <p>{contentUse.header.summary}</p>
-          <hr className={classes.dividerRight} />
+          {divider}
         </div>
       </div>
     </div>

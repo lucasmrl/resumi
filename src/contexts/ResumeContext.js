@@ -1,15 +1,23 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import fakeData from "../utils/fake_data";
 
 export const ResumeContext = createContext();
 
 const ResumeContextProvider = (props) => {
-  const [content, setContent] = useState({
-    header: {},
-    professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
-    education: {},
-    additional: [],
-  });
+  // const [content, setContent] = useState({
+  //   header: {},
+  //   professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+  //   education: {},
+  //   additional: [],
+  // });
+  const [content, setContent] = useState(
+    JSON.parse(localStorage.getItem("dataLocal")) || {
+      header: {},
+      professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
+      education: {},
+      additional: [],
+    }
+  );
 
   const [contentFake, setContentFake] = useState();
 
@@ -45,6 +53,9 @@ const ResumeContextProvider = (props) => {
       additional: [],
     });
   }
+  useEffect(() => {
+    localStorage.setItem("dataLocal", JSON.stringify(content));
+  }, [content]);
 
   return (
     <ResumeContext.Provider

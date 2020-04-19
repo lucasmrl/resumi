@@ -33,7 +33,12 @@ function AdditionalSkills() {
           name="skill1"
           variant="outlined"
           defaultValue={content.additional[0]}
-          inputRef={register}
+          inputRef={register({
+            max: {
+              value: 3,
+              message: "error message", // <p>error message</p>
+            },
+          })}
           // onChange={handleSubmit(onSubmit)}
           style={{ marginTop: 12, marginLeft: 8, marginRight: 8 }}
         />

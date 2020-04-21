@@ -2,11 +2,11 @@ body {
   margin: 0;
   padding: 0;
   background: #f2f3f4;
+  width: 98vw;
 }
 
 .app {
   display: flex;
-  width: 100vw;
   min-height: 100vh;
 }
 
@@ -51,5 +51,28 @@ body {
     position: fixed;
     left: 10px;
     top: -50px;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .left {
+    background-color: #fff;
+    width: 100vw;
+    box-shadow: 0 0 0.5cm #7b7d7d;
+  }
+
+  .right {
+    height: 10vh;
+    font-family: "Lora", serif;
+  }
+
+  .right .page {
   }
 }

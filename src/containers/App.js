@@ -41,7 +41,8 @@ function Templates() {
             The Basic
           </Button>
         </div>
-        <div className={myClasses.templateCard}>
+        {/* Placeholder for a second template */}
+        {/* <div className={myClasses.templateCard}>
           <img src={thumbn} alt="thumbnail" className={myClasses.imgThumb} />
           <Button
             className={classes.headerLink}
@@ -50,7 +51,7 @@ function Templates() {
           >
             The Stylish
           </Button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

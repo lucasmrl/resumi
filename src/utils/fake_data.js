@@ -1,3 +1,4 @@
+//Data used when the user hits "Example" btn
 const data = {
   header: {
     name: "James Clark",

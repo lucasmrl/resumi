@@ -5,12 +5,12 @@ import classes from "./Left.module.css";
 import { useForm } from "react-hook-form";
 import { ResumeContext } from "../../contexts/ResumeContext";
 
-function Header(props) {
+function Header() {
   const { content, updateHeaderData, removeFakeData } = useContext(
     ResumeContext
   );
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
     updateHeaderData(data);

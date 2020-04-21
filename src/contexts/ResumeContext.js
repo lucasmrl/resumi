@@ -4,12 +4,7 @@ import fakeData from "../utils/fake_data";
 export const ResumeContext = createContext();
 
 const ResumeContextProvider = (props) => {
-  // const [content, setContent] = useState({
-  //   header: {},
-  //   professional: { desc1: ["", "", ""], desc2: ["", "", ""] },
-  //   education: {},
-  //   additional: [],
-  // });
+  //If there is no data stored in localStorage, then use the default object.
   const [content, setContent] = useState(
     JSON.parse(localStorage.getItem("dataLocal")) || {
       header: {},
@@ -21,6 +16,7 @@ const ResumeContextProvider = (props) => {
 
   const [contentFake, setContentFake] = useState();
 
+  //Used to "Right" components know when to use the original state or the fake one (for the "example")
   const [control, setControl] = useState(false);
 
   function updateHeaderData(data) {
@@ -63,6 +59,7 @@ const ResumeContextProvider = (props) => {
         content,
         control,
         contentFake,
+        setContent,
         updateHeaderData,
         updateProfessionalData,
         updateEducationData,

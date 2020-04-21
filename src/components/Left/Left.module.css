@@ -1,3 +1,27 @@
+h2 {
+  font-family: "Roboto", serif;
+  color: #2e4053;
+}
+
+h4 {
+  font-family: "Roboto", serif;
+  color: #2e4053;
+}
+
+hr {
+  width: 95%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+img {
+  width: 120px;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
 .topLeft {
   display: flex;
   padding: 15px;
@@ -8,14 +32,6 @@
 .headerLeft {
   display: flex;
   justify-content: space-between;
-}
-
-hr {
-  width: 95%;
-  border: 0;
-  height: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .templatesH2 {
@@ -31,16 +47,6 @@ hr {
   padding-top: 20px;
 }
 
-h2 {
-  font-family: "Roboto", serif;
-  color: #2e4053;
-}
-
-h4 {
-  font-family: "Roboto", serif;
-  color: #2e4053;
-}
-
 .formsSection {
   margin: 25px;
 }
@@ -48,12 +54,6 @@ h4 {
 .formStyle {
   display: flex;
   flex-direction: column;
-}
-
-img {
-  width: 120px;
-  margin-top: 15px;
-  margin-left: 20px;
 }
 
 .img2 {

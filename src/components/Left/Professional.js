@@ -11,7 +11,7 @@ function Professional() {
   );
   const [btnText, setBtnText] = useState("Add");
 
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     removeFakeData();
     updateProfessionalData(data);

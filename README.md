@@ -1,6 +1,6 @@
 # Resumi
 
-A front-end web app to build resumes.
+A front-end web app to build resumes.<br/>
 My second React.js project. The goal was to learn more about React, Hooks, Context API, and router.
 
 [Live Demo](https://resumiapp.herokuapp.com/) - https://resumiapp.herokuapp.com/
